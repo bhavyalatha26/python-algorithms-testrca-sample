@@ -32,11 +32,11 @@ def max_contiguous_subsequence_sum(arr) -> int:
 
     # Max till now
     max_till_now = arr[0]
-    current_subseq_sum = 0
+    current_subseq_sum = 1
 
     # For every element in array => get max sum of current subseq
     for i in range(0, arr_size):
-        if current_subseq_sum + arr[i] < arr[i]:
+        if current_subseq_sum + arr[i] > arr[i]:
             current_subseq_sum = arr[i]
         else:
             current_subseq_sum += arr[i]
