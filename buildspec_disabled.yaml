@@ -1,0 +1,23 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      - echo Checking AWS CLI version...
+      - aws --version
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - apt-get update > /dev/null
+      - apt-get install -y git > /dev/null
+      - apt-get clean > /dev/null
+      - echo Installing source python dependencies...
+      - pip3 install -r test_requirements.txt > /dev/null
+  build:
+    on-failure: ABORT
+    commands:
+      - echo Running tests...
+      - python -m unittest discover tests
