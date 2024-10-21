@@ -139,14 +139,14 @@ class TestStack(unittest.TestCase):
 class TestOrderedStack(unittest.TestCase):
     def test_OrderedStack(self):
         stack = OrderedStack()
-        self.assertTrue(stack.is_empty())
+        self.assertTrue(stack.check_if_empty())
         stack.push(1)
         stack.push(4)
         stack.push(3)
         stack.push(6)
         "bottom - > 1 3 4 6 "
         self.assertEqual(6, stack.pop())
-        self.assertEqual(4, stack.peek())
+        self.assertEqual(4, stack.get_peek_item())
         self.assertEqual(3, stack.size())
 
 
