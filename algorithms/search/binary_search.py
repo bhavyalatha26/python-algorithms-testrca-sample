@@ -45,8 +45,9 @@ def binary_search_recur(array, low, high, val):
 #Here in Logic section first we are checking if low is greater than high which means its an error condition because low index should not move ahead of high index
     if low > high:       
         return -1
-    mid = (low + (high-low))//2   #This mid will not break integer range
-    if val < array[mid]:  
+    # Change the below to inject fault : mid = (low + (high-low))//2   #This mid will not break integer range
+    mid = low + (high-low)//2   #This mid will not break integer range
+    if val < array[mid]:
         return binary_search_recur(array, low, mid - 1, val) #Go search in the left subarray
     if val > array[mid]:
         return binary_search_recur(array, mid + 1, high, val) #Go search in the right subarray
