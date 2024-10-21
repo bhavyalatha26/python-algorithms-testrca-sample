@@ -5,6 +5,8 @@ from algorithms.bfs import (
 
 import unittest
 
+from algorithms.bfs.maze_search import maze_search
+
 
 class TestCountIslands(unittest.TestCase):
 
@@ -44,6 +46,15 @@ class TestWordLadder(unittest.TestCase):
         # not possible to reach !
         self.assertEqual(-1, ladder_length('rahul', 'coder', ['blahh',
                                            'blhah']))
+
+class TestMazeSearch(unittest.TestCase):
+
+    def test_maze_search(self):
+        grid_1 = [[1, 0, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 1],
+                  [1, 1, 1, 0, 1, 1]]
+        self.assertEqual(14, maze_search(grid_1))
+        grid_2 = [[1, 0, 0], [0, 1, 1], [0, 1, 1]]
+        self.assertEqual(-1, maze_search(grid_2))
 
 
 if __name__ == "__main__":
