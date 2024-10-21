@@ -39,7 +39,7 @@ def maze_search(maze):
     UNVISITED, VISITED = 0, 1
 
     # Initialize x and y
-    initial_x, initial_y = 1, 1
+    initial_x, initial_y = 0, 0
 
     # If maze is blocked return -1
     if maze[initial_x][initial_y] == BLOCKED:
