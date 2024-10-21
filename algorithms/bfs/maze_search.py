@@ -27,6 +27,14 @@ the answer is: -1
 '''
 
 def maze_search(maze):
+    """
+    Maze search algorithm
+    Args:
+        maze: initial maze value
+
+    Returns:
+
+    """
     BLOCKED, ALLOWED = 0, 1
     UNVISITED, VISITED = 0, 1
 
